@@ -1,9 +1,620 @@
 Traceback (most recent call last):
-  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 192, in <module>
+  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 202, in <module>
     main()
-  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 172, in main
+  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 182, in main
     qof = extract_qof(download(QOF_URL))
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 88, in extract_qof
-    raise RuntimeError("Could not identify the QOF prevalence table. The source workbook structure may have changed.")
-RuntimeError: Could not identify the QOF prevalence table. The source workbook structure may have changed.
+  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 98, in extract_qof
+    raise RuntimeError("Could not identify the QOF prevalence table. Workbook preview:" + workbook_preview(content))
+RuntimeError: Could not identify the QOF prevalence table. Workbook preview:
+SHEET: Title sheet
+ ,
+,
+,
+,
+,
+,
+Quality and Outcomes Framework 2024-25,
+"Prevalence, achievement and personalised care adjustments",
+Integrated Care Board (ICB) level,
+Publication date:,28 August 2025
+Link to publication: ,https://digital.nhs.uk/data-and-information/publications/statistical/quality-and-outcomes-framework-achievement-prevalence-and-exceptions-data/2024-25
+,
+Contents,
+Notes and definitions,
+Cardiovascular group,
+
+SHEET: Notes and definitions
+,
+,
+,
+,
+,
+,
+,
+Return to Contents,
+Notes and definitions,
+1,"In 2023-24, the depression indicator group comprised of a single indicator, which was based on patients who have been newly diagnosed with depression in the preceding 1 April – 31 March or who had a new diagnosis of depression in the last 3 months of the previous QOF year and did not achieve in that QOF year. 
+
+Consequently, the previous depression register (patients aged at least 18 years old whose latest unresolved episode of depression is since 1st April 2006) was removed from QOF as it was not required for the calculation of the Adjusted Practice Disease Factor (APDF) to support QOF payments in the 2023-24 reporting year.
+
+As a result, QOF data 2023-24 could not be used to calculate the prevalence of depression. However, for 2024-25 the depression register has been reintroduced so prevalence for this year can therefore be calculated."
+,
+2,"Due to the change for 2023-24, noted in the above, incidence was published as it was not possible to calculate the prevalence. The incidence continues to be published for 2024-25, along with the prevalence for this year, now that the register has been reintroduced."
+,
+,
+,
+
+SHEET: AF
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 1: Prevalence, achievement and personalised care adjustments, cardiovascular group, atrial fibrillation, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 29),Achievement (%),Total Achievement Score (max 29)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,25598,2.614030680497603,84,1012517,27377,2.703855836494597,0.08982515599699381,2424.69,99.53571428571428,2430.64
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,18841,1.738336968515997,84,1146901,20304,1.770335887753171,0.03199891923717457,2377.94,97.61658456486043,2406.26
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,24426,1.538840508310029,175,1647789,25551,1.550623289753725,0.01178278144369593,5051.42,99.53536945812807,5062.6
+
+SHEET: BP
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 2: Prevalence, achievement and personalised care adjustments, cardiovascular group, blood pressure, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,List Size,,,,Achievement,,,,,Personalised Care Adjustment (PCA) ,,
+Return to Contents,,,2023-24,,2024-25,,2023-24,,2024-25,,,2023-24,,
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"List size 
+aged 45+",Number of practices,"List size 
+aged 45+",Total Achievement Score (max 15),Achievement (%),Total Achievement Score (max 15),Achievement (%),"Year on year change 
+(percentage point)",Total PCAs,Total Denominators,"Overall 
+PCA Rate 
+(%)"
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,460424,84,476660,1220.37,96.8547619047619,1235.24,98.03492063492062,1.180158730158723,9076,450276,1.975826816907296
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,424231,84,451287,1204.33,95.58174603174604,1212.76,96.25079365079365,0.6690476190476176,12081,409596,2.864989079319005
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,575506,175,596155,2503.83,95.384,2523.08,96.11733333333333,0.7333333333333343,12581,558370,2.203516588989248
+
+SHEET: CHD
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 3: Prevalence, achievement and personalised care adjustments, cardiovascular group, secondary prevention of coronary heart disease, 2024-25, ICB level",,,,,,,,,,,,,,
+*BP indicators in this group have changed to include ambulatory BP monitoring alongside home BP monitoring.  PCAs for the BP indicators in this group have also changed.,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,,,Achievement
+Return to Contents,,,2023-24,,,,2024-25,,,,,,,2023-24
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,"List size 
+aged <=79","List size 
+aged 80+",Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 28)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,30916,3.157097137208528,84,1012517,952359,60158,32309,3.190958769087334,0.03386163187880564,2318.21
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,27361,2.524422153578164,84,1146901,1102268,44633,29003,2.52881460561984,0.004392452041675821,2252.69
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,41321,2.603227243260406,175,1647789,1584958,62831,42886,2.602639051480499,-0.0005881917799075431,4842.76
+
+SHEET: CHOL
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 4: Prevalence, achievement and personalised care adjustments, cardiovascular group, cholesterol control and lipid management, 2024-25, ICB level",,,,,,,,,,,,,,
+*New indicator - no data available for the previous year.,,,,,,,,,,,,,,
+,,,List Size,,,,Achievement,,,,,Personalised Care Adjustment (PCA) ,,
+Return to Contents,,,2023-24,,2024-25,,2023-24,,2024-25,,,2023-24,,
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Number of practices,List size,Total Achievement Score (max 30),Achievement (%),Total Achievement Score (max 30),Achievement (%),"Year on year change 
+(percentage point)",Total PCAs,Total Denominators,"Overall 
+PCA Rate 
+(%)"
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,84,1012517,2303.52,91.4095238095238,2428.38,96.36428571428571,:,14816,90326,14.09141922352628
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,84,1146901,2160.49,85.73373015873015,2393.55,94.98214285714288,:,8928,73661,10.81015631621644
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,175,1647789,5016.51,95.55257142857143,5093.86,97.02590476190474,:,15725,110100,12.49751639181403
+
+SHEET: HF
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 5: Prevalence, achievement and personalised care adjustments, cardiovascular group, heart failure, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 29),Achievement (%),Total Achievement Score (max 29)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,12167,1.242476415720538,84,1012517,13397,1.32313827817212,0.08066186245158136,2348.77,96.41912972085386,2393.46
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,9179,0.8468868443292995,84,1146901,10173,0.8869989650370869,0.04011212070778736,2291.41,94.06444991789819,2351.05
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,12520,0.7887612856808955,175,1647789,13081,0.7938516399854594,0.005090354304563838,5001.95,98.56059113300492,5013.25
+
+SHEET: HYP
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 6: Prevalence, achievement and personalised care adjustments, cardiovascular group, hypertension, 2024-25, ICB level",,,,,,,,,,,,,,
+*BP indicators in this group have changed to include ambulatory BP monitoring alongside home BP monitoring.  PCAs for the BP indicators in this group have also changed.,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,,,Achievement
+Return to Contents,,,2023-24,,,,2024-25,,,,,,,2023-24
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,"List size 
+aged <=79","List size 
+aged 80+",Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 25)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,151953,15.51722025133418,84,1012517,952359,60158,161657,15.96585538810706,0.448635136772884,2017.89
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,148735,13.7228145540166,84,1146901,1102268,44633,161486,14.08020395831898,0.3573894043023831,1883.49
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,203167,12.79954186325324,175,1647789,1584958,62831,215412,13.07279026622948,0.2732484029762396,4140.04
+
+SHEET: PAD
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 7: Prevalence, achievement and personalised care adjustments, cardiovascular group, peripheral arterial disease, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 2),Achievement (%),Total Achievement Score (max 2)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,5409,0.552359244894583,84,1012517,5565,0.5496204014352352,-0.002738843459347828,166,98.80952380952381,166
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,4235,0.3907360045467463,84,1146901,4342,0.3785854228045838,-0.01215058174216244,168,100,168
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,6505,0.4098156679995388,175,1647789,6498,0.3943466062705844,-0.01546906172895446,348,99.42857142857143,348
+
+SHEET: STIA
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 8: Prevalence, achievement and personalised care adjustments, cardiovascular group, stroke and transient ischaemic attack, 2024-25, ICB level",,,,,,,,,,,,,,
+*BP indicators in this group have changed to include ambulatory BP monitoring alongside home BP monitoring.  PCAs for the BP indicators in this group have also changed.,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,,,Achievement
+Return to Contents,,,2023-24,,,,2024-25,,,,,,,2023-24
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,"List size 
+aged <=79","List size 
+aged 80+",Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 11)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,19743,2.016126561647948,84,1012517,952359,60158,20819,2.056163007633452,0.04003644598550338,909.52
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,15485,1.428700597498551,84,1146901,1102268,44633,16547,1.442757482991121,0.01405688549257,886.85
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,22954,1.446104357150102,175,1647789,1584958,62831,23994,1.456133036450662,0.01002867930055973,1881.14
+
+SHEET: AST
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 9: Prevalence, achievement and personalised care adjustments, respiratory group, asthma, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,,Achievement,
+Return to Contents,,,2023-24,,,,2024-25,,,,,,2023-24,
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"List size 
+aged 6+",Register,Prevalence (%),Number of practices,"List size 
+aged 6+","List size 
+aged 6 to 19",Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 45),Achievement (%)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,925876,66597,7.19286383921821,84,958519,167001,70338,7.338195695651311,0.145331856433101,3721.07,98.44100529100528
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1008891,64931,6.435878603337724,84,1069295,205047,68500,6.406089993874469,-0.02978860946325579,3407.74,90.15185185185184
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1481500,94518,6.379885251434357,175,1540770,311412,97774,6.345788144888595,-0.03409710654576159,7665.82,97.34374603174602
+
+SHEET: COPD
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 10: Prevalence, achievement and personalised care adjustments, respiratory group, chronic obstructive pulmonary disease, 2024-25, ICB level",,,,,,,,,,,,,,
+*PCAs for indicators in this group have changed. See data quality annex for more details.,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 19),Achievement (%),Total Achievement Score (max 19)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,17355,1.772267460740523,84,1012517,18583,1.83532720932093,0.0630597485804072,1556.43,97.52067669172932,1560.08
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,16257,1.499928034454889,84,1146901,17963,1.566220624099203,0.06629258964431428,1514.7,94.90601503759397,1555.47
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,23116,1.456310373785909,175,1647789,24058,1.460017028879304,0.003706655093394851,3290.74,98.96962406015038,3303.37
+
+SHEET: OB
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 11: Prevalence, achievement and personalised care adjustments, lifestyle group, obesity, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"List size 
+aged 18+",Register,Prevalence (%),Number of practices,"List size 
+aged 18+",Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 8),Achievement (%),Total Achievement Score (max 8)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,787614,101289,12.86023356618851,84,816216,113121,13.85919903554941,0.9989654693608987,672,100,672
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,838962,94842,11.30468364478963,84,889798,110888,12.4621543316573,1.157470686867665,672,100,672
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1222391,167210,13.67892924604321,175,1274917,184046,14.4359201422524,0.7569908962091922,1400,100,1400
+
+SHEET: SMOK
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 12: Prevalence, achievement and personalised care adjustments, lifestyle group, smoking, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,List Size,,,,Achievement,,,,,Personalised Care Adjustment (PCA) ,,
+Return to Contents,,,2023-24,,2024-25,,2023-24,,2024-25,,,2023-24,,
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"List size 
+aged 15+",Number of practices,"List size 
+aged 15+",Total Achievement Score (max 62),Achievement (%),Total Achievement Score (max 62),Achievement (%),"Year on year change 
+(percentage point)",Total PCAs,Total Denominators,"Overall 
+PCA Rate 
+(%)"
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,822791,84,853107,5188.799999999999,99.63133640552994,5180.44,99.47081413210445,-0.1605222734254852,10124,366270,2.689734692901587
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,880412,84,934774,5153.3,98.94969278033795,5167.41,99.22062211981566,0.2709293394777035,7717,389236,1.944058868430268
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1287348,175,1342913,10833.86,99.85124423963134,10825.48,99.77400921658986,-0.07723502304148155,8644,575322,1.480223163677338
+
+SHEET: CAN
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 13: Prevalence, achievement and personalised care adjustments, high dependancy and other long term conditions group, cancer, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 13),Achievement (%),Total Achievement Score (max 13)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,38640,3.945860828753316,84,1012517,41947,4.142844021384332,0.1969831926310155,1049.94,96.14835164835165,1049.94
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,31986,2.951140930680573,84,1146901,35467,3.09242035711888,0.1412794264383068,1035.55,94.83058608058607,1035.55
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,41648,2.623828276840091,175,1647789,44500,2.700588485540321,0.0767602087002297,2242.92,98.5898901098901,2242.92
+
+SHEET: CKD
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 14: Prevalence, achievement and personalised care adjustments, high dependancy and other long term conditions group, chronic kidney disease, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"List size 
+aged 18+",Register,Prevalence (%),Number of practices,"List size 
+aged 18+",Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 6),Achievement (%),Total Achievement Score (max 6)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,787614,35548,4.513378380780432,84,816216,38106,4.668617130759505,0.1552387499790724,504,100,504
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,838962,24368,2.904541564457031,84,889798,28778,3.234217204354247,0.3296756398972152,504,100,504
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1222391,45811,3.747655210157797,175,1274917,48821,3.829347322217839,0.08169211206004157,1050,100,1050
+
+SHEET: DM
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 15: Prevalence, achievement and personalised care adjustments, high dependancy and other long term conditions group, diabetes mellitus, 2024-25, ICB level",,,,,,,,,,,,,,
+*BP indicators in this group have changed to include ambulatory BP monitoring alongside home BP monitoring.  PCAs for the BP indicators in this group have also changed.,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,,Achievement,
+Return to Contents,,,2023-24,,,,2024-25,,,,,,2023-24,
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"List size 
+aged 17+",Register,Prevalence (%),Number of practices,"List size 
+aged 17+","List size 
+aged 40+",Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 67),Achievement (%)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,799016,59159,7.403981897734213,84,828460,542096,62871,7.588899886536465,0.1849179888022521,5331.75,94.7361407249467
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,852281,71196,8.353582914555176,84,904537,540605,79190,8.754755195199312,0.4011722806441362,5048.86,89.7096659559346
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1243574,113482,9.125472227627789,175,1297545,716665,120875,9.315669206077631,0.1901969784498423,10798.43,92.09748400852878
+
+SHEET: NDH
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 16: Prevalence, achievement and personalised care adjustments, high dependancy and other long term conditions group, non-diabetic hyperglycaemia, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"List size 
+aged 18+",Register,Prevalence (%),Number of practices,"List size 
+aged 18+",Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 18),Achievement (%),Total Achievement Score (max 18)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,787614,76413,9.701833639320784,84,816216,84808,10.39038685838062,0.6885532190598411,1454.29,96.18320105820105,1485.12
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,838962,79415,9.465863769753577,84,889798,101922,11.45450989999977,1.988646130246197,1390.87,91.9887566137566,1437.07
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1222391,108078,8.841524520386685,175,1274917,121275,9.512383943425338,0.6708594230386531,3066.31,97.3431746031746,3070.82
+
+SHEET: PC
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 17: Prevalence, achievement and personalised care adjustments, high dependancy and other long term conditions group, palliative care, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 3),Achievement (%),Total Achievement Score (max 3)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,3303,0.337297575501351,84,1012517,3481,0.3437966967468201,0.006499121245469031,252,100,252
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,3807,0.3512472182548909,84,1146901,4118,0.3590545304259042,0.007807312171013381,252,100,252
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,7265,0.4576957460440661,175,1647789,7839,0.4757283851269793,0.01803263908291319,519,98.85714285714286,519
+
+SHEET: DEM
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 18: Prevalence, achievement and personalised care adjustments, mental health and neurology group, dementia, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 19),Achievement (%),Total Achievement Score (max 19)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,8116,0.8287941637205464,84,1012517,8745,0.8636892022553695,0.03489503853482312,1582.85,99.17606516290726,1595.75
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,6886,0.6353265944058782,84,1146901,7626,0.6649222557134399,0.02959566130756164,1548.58,97.02882205513784,1566.67
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,8921,0.5620239160989833,175,1647789,9500,0.5765301261265854,0.01450621002760211,3296.91,99.15518796992481,3310.83
+
+SHEET: DEP
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 19: Prevalence, achievement and personalised care adjustments, mental health and neurology group, depression, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence [note 1],,,,,,Achievement,,,,,Personalised Care Adjustment (PCA) 
+Return to Contents,,,2023-24,,2024-25,,,,2023-24,,2024-25,,,2023-24
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"List size 
+aged 18+",Number of practices,"List size 
+aged 18+",Register,Prevalence (%),Total Achievement Score (max 10),Achievement (%),Total Achievement Score (max 10),Achievement (%),"Year on year change 
+(percentage point)",Total PCAs
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,787614,84,816216,100512,12.31438736804963,817.5099999999999,97.32261904761903,817.5099999999999,97.32261904761904,1.4210854715202e-14,1657
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,838962,84,889798,101435,11.39977837666527,761.74,90.68333333333334,761.74,90.68333333333334,0,2571
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1222391,175,1274917,162777,12.76765467869673,1723.05,98.46000000000001,1723.05,98.46000000000001,0,2693
+
+SHEET: EP
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 20: Prevalence, achievement and personalised care adjustments, mental health and neurology group, epilepsy, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"List size 
+aged 18+",Register,Prevalence (%),Number of practices,"List size 
+aged 18+",Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 1),Achievement (%),Total Achievement Score (max 1)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,787614,6463,0.8205796240290294,84,816216,6628,0.8120399502092583,-0.008539673819771054,84,100,84
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,838962,5775,0.6883506046757779,84,889798,6113,0.6870098606650049,-0.001340744010772998,84,100,84
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1222391,9616,0.7866550064586536,175,1274917,9841,0.7718933860008141,-0.01476162045783946,175,100,175
+
+SHEET: LD
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 21: Prevalence, achievement and personalised care adjustments, mental health and neurology group, learning disability, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 4),Achievement (%),Total Achievement Score (max 4)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,5615,0.5733956664971499,84,1012517,5818,0.574607636217466,0.001211969720316119,336,100,336
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,5812,0.5362355745987459,84,1146901,6384,0.5566304327923683,0.02039485819362241,336,100,336
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,11914,0.7505832234506542,175,1647789,12664,0.768545001817587,0.0179617783669328,700,100,700
+
+SHEET: MH
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 22: Prevalence, achievement and personalised care adjustments, mental health and neurology group, mental health, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Register,Prevalence (%),Number of practices,List size,Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 38),Achievement (%),Total Achievement Score (max 38)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,979254,8257,0.8431928794776432,84,1012517,9046,0.8934170981820552,0.05022421870441196,2977.969999999999,93.29479949874685,2997.86
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1083852,10073,0.929370430649203,84,1146901,11111,0.9687845768728076,0.03941414622360462,2949.49,92.40256892230576,2996.93
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1587299,18798,1.184275930369767,175,1647789,20718,1.257321174009536,0.07304524363976994,6290.750000000001,94.59774436090227,6257.41
+
+SHEET: OST
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 23: Prevalence, achievement and personalised care adjustments, musculoskeletal group, osteoporosis: secondary prevention of fragility fractures, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"List size 
+aged 50+",Register,Prevalence (%),Number of practices,"List size 
+aged 50+",Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 3),Achievement (%),Total Achievement Score (max 3)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,402425,5000,1.242467540535503,84,416637,5361,1.286731615291009,0.0442640747555052,249,98.80952380952381,249
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,352184,2303,0.6539195420575609,84,373190,2715,0.7275114552908706,0.07359191323330971,252,100,252
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,477989,3446,0.7209370926946018,175,492823,4266,0.8656251838895506,0.1446880911949487,498,94.85714285714286,498
+
+SHEET: RA
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 24: Prevalence, achievement and personalised care adjustments, musculoskeletal group, rheumatoid arthritis, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,Prevalence,,,,,,,,,Achievement,,
+Return to Contents,,,2023-24,,,,2024-25,,,,,2023-24,,2024-25
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"List size 
+aged 16+",Register,Prevalence (%),Number of practices,"List size 
+aged 16+",Register,Prevalence (%),"Year on year change 
+(percentage point)",Total Achievement Score (max 1),Achievement (%),Total Achievement Score (max 1)
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,810887,6780,0.8361214324560636,84,840764,7132,0.848276091745127,0.01215465928906334,84,100,84
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,866248,6590,0.7607521171766054,84,919538,7215,0.7846331527353954,0.02388103555878995,84,100,84
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1265335,8410,0.6646461213828749,175,1320409,8932,0.6764570674692463,0.01181094608637134,175,100,175
+
+SHEET: CS
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 25: Prevalence, achievement and personalised care adjustments, fertility, obstetrics and gynaecology group, cervical screening, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,List Size,,,,,Achievement,,,,,Personalised Care Adjustment (PCA) ,
+Return to Contents,,,2023-24,,2024-25,,,2023-24,,2024-25,,,2023-24,
+ICB ODS code,ICB ONS code,ICB name,Number of practices,"Females 
+aged 25-64",Number of practices,"Females 
+aged 25-49","Females 
+aged 50-64",Total Achievement Score (max 11),Achievement (%),Total Achievement Score (max 11),Achievement (%),"Year on year change 
+(percentage point)",Total PCAs,Total Denominators
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,255695,84,160453,103407,898.02,97.18831168831169,898.3299999999999,97.22186147186146,0.03354978354977334,24126,220125
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,291552,84,210082,98489,873.2099999999999,94.50324675324676,867.85,93.92316017316017,-0.5800865800865864,41819,239232
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,404878,175,290892,127909,1754.99,91.16831168831169,1764.43,91.65870129870129,0.4903896103895988,69365,319604
+
+SHEET: VI
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"Table 26: Prevalence, achievement and personalised care adjustments, vaccination and immunisation group, vaccination and immunisation, 2024-25, ICB level",,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,List size,List size,,,,,Achievement,,,,,Personalised care adjustment
+Return to Contents,,,2023-24,2024-25,,,,,2023-24,,2024-25,,,2023-24
+ICB ODS code,ICB ONS code,ICB name,Number of practices,Number of practices,"List size 
+aged under 1","List size 
+aged 1 to 2","List size 
+aged 4 to 5","List size 
+aged 79 to 80",Total Achievement Score (max 64),Achievement (%),Total Achievement Score (max 64),Achievement (%),"Year on year change 
+(percentage point)",Total PCAs
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,84,7547,17308,19569,15216,4455.15,82.87109374999999,4276.07,79.53999255952381,-3.331101190476176,1177
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,84,11559,25253,27346,11400,3249.059999999999,60.43638392857142,3147.15,58.54073660714286,-1.895647321428562,1781
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,175,16325,34682,37732,14789,4086.650000000001,36.48794642857143,3871.5,34.56696428571428,-1.920982142857149,3161
+
+SHEET: QIOSC
+,,,,,,,,,,,,
+,,,,,,,"The contractor can demonstrate that it has in place a recognised and validated approach to understanding demand/activity, capacity and appointment data and has made improvements to data quality to better reflect practice work.",,The contractor can demonstrate that it has utilised demand and capacity data to inform operational decisions and plan for demand and capacity matching.,,"The contractor has participated in network activity to review the smart cards of all staff employed under the Additional Roles Reimbursement Scheme (ARRS), to ensure that the staff role assigned on their smart card aligns with the role they are employed under within the ARRS.",
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+"Table 27: Prevalence, achievement and personalised care adjustments, optimising demand and capacity in general practice group, optimise use of staff capacity, 2024-25, ICB level",,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,List Size,,Achievement,,,,,,,
+Return to Contents,,,2024-25,,2024-25,,QI016,,QI017,,QI018,
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Total Achievement Score (max 22),Achievement (%),Achievement Score (max 10),"Achievement 
+Rate (%)",Achievement Score (max 6),"Achievement 
+Rate (%)",Achievement Score (max 6),"Achievement 
+Rate (%)"
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,1012517,1848,100,840,100,504,100,504,100
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1146901,1848,100,840,100,504,100,504,100
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1647789,3844,99.84415584415584,1750,100,1050,100,1044,99.42857142857143
+
+SHEET: QIRAA
+,,,,,,,,
+,,,,,,,"The contractor can demonstrate improvement in reducing avoidable appointments. A suggested approach is outlined below:
+1. Using BI tools, if available and practice collected data where not, to understand the practice activity including variations over the days of the week, time of day and time of year.
+2. Developing an understanding of the telephone queue either by extracting data from their cloud-based telephony system or asking staff to collect data over a period.
+3. Using that data to understand their peaks of activity and better matching their capacity to their demand by, for instance, reviewing rotas.
+4. Using improvement techniques described in the Primary Care Transformation Teams webinar series on Demand and Capacity which provides practical advice and guidance.
+5. Referencing the Royal College of General Practitioner’s 6 steps to start to improve delivering continuity of care from their Continuity Toolkit for those who need it and adapting to suit the needs of the practice.",
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+"Table 28: Prevalence, achievement and personalised care adjustments, optimising demand and capacity in general practice group, reducing avoidable appointments, 2024-25, ICB level",,,,,,,,
+,,,,,,,,
+,,,List Size,,Achievement,,,
+Return to Contents,,,2024-25,,2024-25,,QI019,
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Total Achievement Score (max 15),Achievement (%),Achievement Score (max 15),"Achievement 
+Rate (%)"
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,1012517,1260,100,1260,100
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1146901,1260,100,1260,100
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1647789,2625,100,2625,100
+
+SHEET: QIWW
+,,,,,,,,,,
+,,,,,,,The contractor can demonstrate continuous quality improvement activity focused upon workforce and wellbeing as specified in the QOF guidance.,,"The contractor has participated in network activity to regularly share and discuss learning from quality improvement activity focused on workforce and wellbeing as specified in current QOF guidance. This would entail attending two primary care network meetings, at the start and towards the end of QI activity. If a practice is not within a PCN, the expectation is that two meetings would be held locally with other practices.",
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+"Table 29: Prevalence, achievement and personalised care adjustments, workforce and wellbeing group, workforce and wellbeing, 2024-25, ICB level",,,,,,,,,,
+,,,,,,,,,,
+,,,List Size,,Achievement,,,,,
+Return to Contents,,,2024-25,,2024-25,,QI013,,QI014,
+ICB ODS code,ICB ONS code,ICB name,Number of practices,List size,Total Achievement Score (max 37),Achievement (%),Achievement Score (max 27),"Achievement 
+Rate (%)",Achievement Score (max 10),"Achievement 
+Rate (%)"
+QOX,E54000040,"NHS Bath and North East Somerset, Swindon and Wiltshire Integrated Care Board",84,1012517,3108,100,2268,100,840,100
+QHG,E54000024,"NHS Bedfordshire, Luton and Milton Keynes Integrated Care Board",84,1146901,3108,100,2268,100,840,100
+QHL,E54000055,NHS Birmingham and Solihull Integrated Care Board,175,1647789,6475,100,4725,100,1750,100
+
