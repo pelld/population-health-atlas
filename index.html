@@ -23,13 +23,14 @@
        ============================================================ -->
   <main class="dashboard">
     <aside class="panel controls" aria-label="Map controls">
+      <label>Geography<select id="geographySelect"><option value="icb">Integrated Care Boards</option><option value="practice">GP practices</option></select></label>
       <label>Primary condition<select id="conditionSelect"></select></label>
       <label>Optional condition pair<select id="pairSelect"></select></label>
       <fieldset>
         <legend>View</legend>
-        <div class="segmented"><button id="recordedButton" class="active">Recorded prevalence</button><button id="adjustedButton">Adjusted for deprivation</button></div>
+        <div class="segmented"><button id="recordedButton" class="active">Recorded prevalence</button><button id="adjustedButton">Model-adjusted</button></div>
       </fieldset>
-      <label>Search area<input id="areaSearch" type="search" placeholder="Start typing an NHS region…"></label>
+      <label id="searchLabel">Search area<input id="areaSearch" type="search" placeholder="Start typing an ICB…"></label>
       <div id="searchResults" class="search-results" hidden></div>
       <div class="definition"><span>i</span><p id="definitionText">Recorded prevalence is the proportion of patients on the relevant QOF register.</p></div>
       <button id="downloadButton" class="download">↓ Download displayed data</button>
@@ -38,7 +39,7 @@
     <section class="panel map-panel" aria-label="England map">
       <div class="map-heading"><div><p id="selectionLabel">Diabetes</p><h2 id="viewTitle">Recorded prevalence</h2></div><span id="geographyLabel">NHS geography</span></div>
       <div class="map-stage">
-        <div class="legend"><strong id="legendTitle">Prevalence (%)</strong><div id="legendRamp" class="legend-ramp"></div><div><span id="legendLow">Lower</span><span id="legendHigh">Higher</span></div><p>England average <b id="nationalValue">8.8%</b></p></div>
+        <div class="legend"><strong id="legendTitle">Prevalence (%)</strong><div id="legendRamp" class="legend-ramp"></div><div><span id="legendLow">Lower</span><span id="legendHigh">Higher</span></div><p>Displayed average <b id="nationalValue">8.8%</b></p></div>
         <svg id="englandMap" class="england-map" viewBox="0 0 500 610" role="img" aria-label="Map of England by region"></svg>
         <article class="area-card"><p>Selected area</p><h3 id="areaName">North West</h3><strong id="areaValue">10.8%</strong><span id="areaComparison">2.0 pp from England average</span></article>
       </div>
@@ -60,13 +61,15 @@
   <div id="modalBackdrop" class="modal-backdrop" hidden>
     <section class="modal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
       <button id="closeModal" class="close" aria-label="Close">×</button><p class="eyebrow teal">Methodology</p><h2 id="aboutTitle">About this analysis</h2>
-      <p>The proposed pipeline combines annual QOF prevalence, practice geography and area deprivation. For each condition, a deprivation-adjusted residual estimates whether recorded prevalence is above or below the level expected from deprivation alone.</p>
+      <p>The pipeline combines annual QOF prevalence with registered-patient age bands and registered-patient counts by LSOA. Practice deprivation is a patient-weighted estimate, not the deprivation of the surgery postcode.</p>
+      <p>The practice residual estimates whether recorded prevalence is above or below the level expected from deprivation and age mix. It is model-adjusted rather than formally age-standardised because QOF does not publish age-specific condition registers.</p>
       <p>Condition-pair scores are correlations between adjusted practice-level rates. They identify geographic clustering, not diagnoses recorded for the same patients.</p>
       <p id="methodStatus">The site uses a reproducible data pipeline so the published results can be refreshed without rebuilding the webpage.</p>
     </section>
   </div>
   <script src="data/atlas-data.js"></script>
   <script src="data/icb-boundaries.js"></script>
+  <script src="data/practice-data.js"></script>
   <script src="regions.js"></script>
   <script src="app.js"></script>
 </body>
