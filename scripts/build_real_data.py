@@ -123,10 +123,10 @@ def extract_qof(content: bytes) -> pd.DataFrame:
 # 02. ICB DEPRIVATION
 # ============================================================
 def extract_imd(content: bytes) -> pd.DataFrame:
-    for _, table in read_tables(content, ("icb",)):
+    for _, table in read_tables(content, ("integrated", "care", "board")):
         columns = list(table.columns)
-        code_col = choose_column(columns, ("icb", "code")) or choose_column(columns, ("area", "code"))
-        name_col = choose_column(columns, ("icb", "name"))
+        code_col = choose_column(columns, ("icb", "code")) or choose_column(columns, ("integrated", "care", "board", "code"))
+        name_col = choose_column(columns, ("icb", "name")) or choose_column(columns, ("integrated", "care", "board", "name"))
         score_col = choose_column(columns, ("average", "score")) or choose_column(columns, ("imd", "score"))
         if code_col and name_col and score_col:
             data = table[[code_col, name_col, score_col]].copy()
