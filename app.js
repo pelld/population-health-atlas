@@ -4,19 +4,8 @@
 // ============================================================
 const conditions = ["Diabetes", "Depression", "Hypertension", "COPD", "CHD", "Atrial fibrillation", "CKD", "Asthma"];
 const factors = { Diabetes: 1, Depression: 1.18, Hypertension: 1.55, COPD: 0.42, CHD: 0.36, "Atrial fibrillation": 0.24, CKD: 0.48, Asthma: 0.75 };
-const regions = [
-  { id:"ne", name:"North East and North Cumbria", path:"M242 58 L277 74 L284 112 L267 142 L235 131 L224 91 Z", base:11.2, imd:0.8 },
-  { id:"nw", name:"North West", path:"M194 80 L226 91 L236 132 L222 174 L192 205 L165 188 L164 138 Z", base:10.8, imd:1.2 },
-  { id:"yh", name:"Yorkshire and the Humber", path:"M236 132 L269 142 L292 177 L279 210 L231 211 L218 176 Z", base:9.9, imd:0.7 },
-  { id:"em", name:"East Midlands", path:"M230 211 L279 210 L294 259 L268 294 L227 279 L215 242 Z", base:8.7, imd:-0.1 },
-  { id:"wm", name:"West Midlands", path:"M180 211 L230 211 L215 244 L226 280 L197 306 L159 276 L157 239 Z", base:10.2, imd:0.9 },
-  { id:"east", name:"East of England", path:"M279 210 L322 220 L348 270 L335 316 L291 323 L268 294 L294 259 Z", base:7.4, imd:-0.7 },
-  { id:"lon", name:"London", path:"M254 322 L291 323 L301 345 L268 358 L240 344 Z", base:8.1, imd:0.2 },
-  { id:"se", name:"South East", path:"M227 280 L268 294 L291 323 L254 323 L240 345 L289 365 L260 389 L202 372 L187 332 Z", base:6.3, imd:-1.1 },
-  { id:"sw", name:"South West", path:"M158 276 L198 306 L187 332 L202 372 L158 391 L108 416 L58 405 L92 377 L116 326 Z", base:6.7, imd:-0.8 }
-];
 const pairs = [["Diabetes","Hypertension",0.74],["CHD","Atrial fibrillation",0.67],["COPD","Depression",0.61],["Diabetes","CHD",0.56],["Hypertension","CKD",0.51]];
-let state = { condition:"Diabetes", pair:"Depression", mode:"recorded", selected:"nw" };
+let state = { condition:"Diabetes", pair:"Depression", mode:"recorded", selected:"E12000002" };
 
 // ============================================================
 // 01. START-UP
