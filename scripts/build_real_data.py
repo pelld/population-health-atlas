@@ -39,17 +39,22 @@ def find_header(frame: pd.DataFrame, required_words: tuple[str, ...]) -> int | N
     return None
 
 
-def read_tables(content: bytes) -> list[pd.DataFrame]:
+def read_tables(content: bytes, required_words: tuple[str, ...]) -> list[tuple[str, pd.DataFrame]]:
     raw_sheets = pd.read_excel(io.BytesIO(content), sheet_name=None, header=None)
     tables = []
-    for frame in raw_sheets.values():
-        header_row = find_header(frame, ("icb",))
+    for sheet_name, frame in raw_sheets.items():
+        header_row = find_header(frame, required_words)
         if header_row is None:
             continue
         table = frame.iloc[header_row + 1 :].copy()
-        table.columns = [clean(value) or f"column {index}" for index, value in enumerate(frame.iloc[header_row])]
+        headers, seen = [], {}
+        for index, value in enumerate(frame.iloc[header_row]):
+            header = clean(value) or f"column {index}"
+            seen[header] = seen.get(header, 0) + 1
+            headers.append(header if seen[header] == 1 else f"{header} {seen[header]}")
+        table.columns = headers
         table = table.dropna(how="all")
-        tables.append(table)
+        tables.append((sheet_name, table))
     return tables
 
 
@@ -83,22 +88,25 @@ def weighted_regression_residual(y: pd.Series, x: pd.Series) -> pd.Series:
 # 01. QOF PREVALENCE
 # ============================================================
 def extract_qof(content: bytes) -> pd.DataFrame:
+    condition_names = {"AF": "Atrial fibrillation", "CHD": "Coronary heart disease", "HF": "Heart failure", "HYP": "Hypertension", "PAD": "Peripheral arterial disease", "STIA": "Stroke and TIA", "DM": "Diabetes", "COPD": "COPD", "AST": "Asthma", "CAN": "Cancer", "CKD": "Chronic kidney disease", "DEM": "Dementia", "DEP": "Depression", "EP": "Epilepsy", "LD": "Learning disabilities", "MH": "Serious mental illness", "OST": "Osteoporosis", "RA": "Rheumatoid arthritis", "OB": "Obesity", "PC": "Palliative care"}
     candidates = []
-    for table in read_tables(content):
+    for sheet_name, table in read_tables(content, ("icb", "prevalence")):
         columns = list(table.columns)
         code_col = choose_column(columns, ("icb", "code"))
         name_col = choose_column(columns, ("icb", "name"))
-        prevalence_col = choose_column(columns, ("prevalence",), ("change", "difference"))
+        prevalence_columns = [column for column in columns if "prevalence" in column and "change" not in column and "difference" not in column]
+        prevalence_col = prevalence_columns[-1] if prevalence_columns else None
         group_col = choose_column(columns, ("group", "name")) or choose_column(columns, ("disease",)) or choose_column(columns, ("register", "name"))
-        if code_col and name_col and prevalence_col and group_col:
-            part = table[[code_col, name_col, group_col, prevalence_col]].copy()
-            part.columns = ["icb_code", "icb_name", "condition", "prevalence"]
+        if code_col and name_col and prevalence_col:
+            part = table[[code_col, name_col, prevalence_col]].copy()
+            part.columns = ["icb_code", "icb_name", "prevalence"]
+            part["condition"] = table[group_col].astype(str).str.strip() if group_col else condition_names.get(sheet_name, sheet_name)
             candidates.append(part)
     if not candidates:
         raise RuntimeError("Could not identify the QOF prevalence table. Workbook preview:" + workbook_preview(content))
     data = pd.concat(candidates, ignore_index=True)
     data["icb_code"] = data["icb_code"].astype(str).str.strip()
-    data["icb_name"] = data["icb_name"].astype(str).str.replace(r"\s+Integrated Care Board$", "", regex=True).str.strip()
+    data["icb_name"] = data["icb_name"].astype(str).str.replace(r"^NHS\s+", "", regex=True).str.replace(r"\s+Integrated Care Board$", "", regex=True).str.strip()
     data["condition"] = data["condition"].astype(str).str.strip()
     data["prevalence"] = pd.to_numeric(data["prevalence"], errors="coerce")
     if data["prevalence"].dropna().median() <= 1:
@@ -114,7 +122,7 @@ def extract_qof(content: bytes) -> pd.DataFrame:
 # 02. ICB DEPRIVATION
 # ============================================================
 def extract_imd(content: bytes) -> pd.DataFrame:
-    for table in read_tables(content):
+    for _, table in read_tables(content, ("icb",)):
         columns = list(table.columns)
         code_col = choose_column(columns, ("icb", "code"))
         name_col = choose_column(columns, ("icb", "name"))
