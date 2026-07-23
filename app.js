@@ -46,6 +46,7 @@ function project(longitude, latitude) {
 function renderRanking() {
   const ranked = state.geography === "practice" ? practiceData?.pairs || [] : atlasData?.pairs || [];
   el("pairRanking").innerHTML = ranked.slice(0, 5).map((pair, index) => `<li><span class="rank">${index + 1}</span><div><p>${pair.first} + ${pair.second}</p><div class="bar"><i style="width:${Math.max(0, pair.correlation) * 100}%"></i></div></div><strong>${pair.correlation.toFixed(2)}</strong></li>`).join("");
+  if (ranked.length) { el("keyPair").textContent = `${ranked[0].first} and ${ranked[0].second}`; el("keyPairText").textContent = `Correlation ${ranked[0].correlation.toFixed(2)} after ${state.geography === "practice" ? "age and deprivation" : "deprivation"} adjustment.`; }
 }
 function renderMap(data, extent) {
   const boundaries = mapAreas.map(area => `<path data-id="${area.id}" d="${area.path}" fill="${state.geography === "icb" ? colour(data.find(item => item.id === area.id)?.value || 0, extent) : "#dce8e5"}" class="${area.id === state.selected ? "selected-region" : ""}" tabindex="0"></path>`).join("");
