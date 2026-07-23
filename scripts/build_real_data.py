@@ -33,8 +33,9 @@ def clean(value: object) -> str:
 
 def find_header(frame: pd.DataFrame, required_words: tuple[str, ...]) -> int | None:
     for row_number in range(min(30, len(frame))):
-        row = " | ".join(clean(value) for value in frame.iloc[row_number].tolist())
-        if all(word in row for word in required_words):
+        cells = [clean(value) for value in frame.iloc[row_number].tolist()]
+        populated = [cell for cell in cells if cell and cell != "nan"]
+        if len(populated) >= 3 and all(any(word in cell for cell in cells) for word in required_words):
             return row_number
     return None
 
@@ -92,7 +93,7 @@ def extract_qof(content: bytes) -> pd.DataFrame:
     candidates = []
     for sheet_name, table in read_tables(content, ("icb", "prevalence")):
         columns = list(table.columns)
-        code_col = choose_column(columns, ("icb", "code"))
+        code_col = choose_column(columns, ("icb", "ons", "code"))
         name_col = choose_column(columns, ("icb", "name"))
         prevalence_columns = [column for column in columns if "prevalence" in column and "change" not in column and "difference" not in column]
         prevalence_col = prevalence_columns[-1] if prevalence_columns else None
@@ -111,7 +112,7 @@ def extract_qof(content: bytes) -> pd.DataFrame:
     data["prevalence"] = pd.to_numeric(data["prevalence"], errors="coerce")
     if data["prevalence"].dropna().median() <= 1:
         data["prevalence"] *= 100
-    data = data[data["icb_code"].str.match(r"^Q[A-Z0-9]{2}$", na=False) & data["prevalence"].notna()]
+    data = data[data["icb_code"].str.match(r"^E54\d{6}$", na=False) & data["prevalence"].notna()]
     data = data.drop_duplicates(["icb_code", "condition"], keep="first")
     if data["icb_code"].nunique() < 35 or data["condition"].nunique() < 10:
         raise RuntimeError(f"QOF extraction returned only {data['icb_code'].nunique()} ICBs and {data['condition'].nunique()} conditions.")
@@ -124,7 +125,7 @@ def extract_qof(content: bytes) -> pd.DataFrame:
 def extract_imd(content: bytes) -> pd.DataFrame:
     for _, table in read_tables(content, ("icb",)):
         columns = list(table.columns)
-        code_col = choose_column(columns, ("icb", "code"))
+        code_col = choose_column(columns, ("icb", "code")) or choose_column(columns, ("area", "code"))
         name_col = choose_column(columns, ("icb", "name"))
         score_col = choose_column(columns, ("average", "score")) or choose_column(columns, ("imd", "score"))
         if code_col and name_col and score_col:
@@ -132,10 +133,10 @@ def extract_imd(content: bytes) -> pd.DataFrame:
             data.columns = ["icb_code", "icb_name_imd", "imd_score"]
             data["icb_code"] = data["icb_code"].astype(str).str.strip()
             data["imd_score"] = pd.to_numeric(data["imd_score"], errors="coerce")
-            data = data[data["icb_code"].str.match(r"^Q[A-Z0-9]{2}$", na=False) & data["imd_score"].notna()].drop_duplicates("icb_code")
+            data = data[data["icb_code"].str.match(r"^E54\d{6}$", na=False) & data["imd_score"].notna()].drop_duplicates("icb_code")
             if data["icb_code"].nunique() >= 35:
                 return data
-    raise RuntimeError("Could not identify the ICB deprivation score table. The source workbook structure may have changed.")
+    raise RuntimeError("Could not identify the ICB deprivation score table. Workbook preview:" + workbook_preview(content))
 
 
 # ============================================================
