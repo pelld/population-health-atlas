@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 192, in <module>
+    main()
+  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 172, in main
+    qof = extract_qof(download(QOF_URL))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 88, in extract_qof
+    raise RuntimeError("Could not identify the QOF prevalence table. The source workbook structure may have changed.")
+RuntimeError: Could not identify the QOF prevalence table. The source workbook structure may have changed.
