@@ -1,10 +1,10 @@
 Traceback (most recent call last):
-  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 202, in <module>
+  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 210, in <module>
     main()
-  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 182, in main
+  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 190, in main
     qof = extract_qof(download(QOF_URL))
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 98, in extract_qof
+  File "/home/runner/work/population-health-atlas/population-health-atlas/scripts/build_real_data.py", line 106, in extract_qof
     raise RuntimeError("Could not identify the QOF prevalence table. Workbook preview:" + workbook_preview(content))
 RuntimeError: Could not identify the QOF prevalence table. Workbook preview:
 SHEET: Title sheet
