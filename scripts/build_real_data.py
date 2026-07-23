@@ -53,6 +53,16 @@ def read_tables(content: bytes) -> list[pd.DataFrame]:
     return tables
 
 
+def workbook_preview(content: bytes) -> str:
+    """Return a compact structural preview when a publisher changes a workbook."""
+    sheets = pd.read_excel(io.BytesIO(content), sheet_name=None, header=None)
+    previews = []
+    for name, frame in sheets.items():
+        sample = frame.iloc[:15, :15].fillna("").astype(str)
+        previews.append(f"\nSHEET: {name}\n{sample.to_csv(index=False, header=False)}")
+    return "".join(previews)
+
+
 def choose_column(columns: list[str], include: tuple[str, ...], exclude: tuple[str, ...] = ()) -> str | None:
     candidates = [column for column in columns if all(word in column for word in include) and not any(word in column for word in exclude)]
     return min(candidates, key=len) if candidates else None
@@ -85,7 +95,7 @@ def extract_qof(content: bytes) -> pd.DataFrame:
             part.columns = ["icb_code", "icb_name", "condition", "prevalence"]
             candidates.append(part)
     if not candidates:
-        raise RuntimeError("Could not identify the QOF prevalence table. The source workbook structure may have changed.")
+        raise RuntimeError("Could not identify the QOF prevalence table. Workbook preview:" + workbook_preview(content))
     data = pd.concat(candidates, ignore_index=True)
     data["icb_code"] = data["icb_code"].astype(str).str.strip()
     data["icb_name"] = data["icb_name"].astype(str).str.replace(r"\s+Integrated Care Board$", "", regex=True).str.strip()
