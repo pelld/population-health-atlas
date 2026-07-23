@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - "scripts/build_real_data.py"
+      - "scripts/build_practice_data.py"
       - "requirements.txt"
       - ".github/workflows/refresh-data.yml"
 
@@ -33,6 +34,7 @@ jobs:
         run: |
           mkdir -p data
           python scripts/build_real_data.py > data/refresh-log.txt 2>&1
+          python scripts/build_practice_data.py >> data/refresh-log.txt 2>&1
 
       - name: Commit refreshed data or diagnostic
         run: |
