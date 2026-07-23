@@ -25,7 +25,7 @@ button:focus-visible,select:focus,input:focus { outline:3px solid #92d5cf; outli
    ============================================================ */
 .dashboard { display:grid; grid-template-columns:minmax(250px,310px) minmax(430px,1fr) minmax(280px,350px); gap:14px; padding:14px clamp(14px,2vw,30px); max-width:1600px; margin:auto; }
 .panel { min-width:0; border:1px solid var(--line); border-radius:12px; background:#ffffffd1; box-shadow:0 5px 22px #1636400a; }
-.controls { position:relative; padding:20px; display:flex; flex-direction:column; gap:20px; }
+.controls { padding:20px; display:flex; flex-direction:column; gap:20px; }
 label,legend { display:grid; gap:8px; font-size:13px; font-weight:750; color:var(--navy); }
 select,input { width:100%; min-height:47px; padding:0 12px; background:white; border:1px solid #cbd3d0; border-radius:8px; color:var(--ink); }
 fieldset { margin:0; padding:0; border:0; }
@@ -34,7 +34,7 @@ fieldset { margin:0; padding:0; border:0; }
 .segmented button:first-child { border-radius:8px 0 0 8px; }
 .segmented button:last-child { border-left:0; border-radius:0 8px 8px 0; }
 .segmented button.active { color:white; background:var(--teal); border-color:var(--teal); }
-.search-results { position:absolute; z-index:5; top:351px; left:20px; right:20px; padding:5px; border:1px solid var(--line); border-radius:8px; background:white; box-shadow:0 8px 18px #1233; }
+.search-results { position:relative; z-index:5; margin-top:-18px; padding:5px; border:1px solid var(--line); border-radius:8px; background:white; box-shadow:0 8px 18px #1233; }
 .search-results button { display:block; width:100%; padding:9px; text-align:left; border:0; background:white; }
 .search-results button:hover { background:var(--pale); }
 .search-results p { margin:8px; color:var(--muted); }
@@ -57,6 +57,8 @@ fieldset { margin:0; padding:0; border:0; }
 .england-map path { fill-rule:evenodd; stroke:white; stroke-width:1.5; vector-effect:non-scaling-stroke; transition:filter .18s,opacity .18s; cursor:pointer; }
 .england-map:hover path { opacity:.78; }
 .england-map path:hover,.england-map .selected-region { opacity:1; filter:brightness(.83); stroke:#0b4b57; stroke-width:4; }
+.england-map circle { stroke:#fff; stroke-width:1; vector-effect:non-scaling-stroke; cursor:pointer; opacity:.8; }
+.england-map circle:hover,.england-map .selected-practice { opacity:1; stroke:#082f43; stroke-width:3; }
 .legend { position:absolute; z-index:2; top:16px; left:16px; width:170px; padding:12px; border:1px solid var(--line); border-radius:8px; background:#fffffff0; font-size:10px; }
 .legend strong { font-size:12px; color:var(--navy); }
 .legend-ramp { height:10px; margin:10px 0 4px; border-radius:5px; background:linear-gradient(90deg,#dceeea,#62aaa3,#087f78); }
