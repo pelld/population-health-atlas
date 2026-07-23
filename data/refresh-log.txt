@@ -1,1 +1,2 @@
 Built 42 ICBs, 21 conditions and 10 ranked pairs.
+Built 6181 geocoded practices, 21 conditions; median IMD coverage 99.9%.
