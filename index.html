@@ -16,7 +16,7 @@
     <p class="strapline">Where recorded long-term conditions cluster across England</p>
     <button id="aboutButton" class="about-button">About this analysis</button>
   </header>
-  <section class="notice"><strong>Demonstration version</strong><span>The figures illustrate the proposed analysis and are not published QOF results.</span></section>
+  <section class="notice"><strong id="dataStatus">Loading data</strong><span id="dataStatusText">Checking for the latest published QOF results.</span></section>
 
   <!-- ============================================================
        01. DASHBOARD
@@ -36,7 +36,7 @@
     </aside>
 
     <section class="panel map-panel" aria-label="England map">
-      <div class="map-heading"><div><p id="selectionLabel">Diabetes + Depression</p><h2 id="viewTitle">Recorded prevalence</h2></div><span>Illustrative NHS regions</span></div>
+      <div class="map-heading"><div><p id="selectionLabel">Diabetes</p><h2 id="viewTitle">Recorded prevalence</h2></div><span id="geographyLabel">NHS geography</span></div>
       <div class="map-stage">
         <div class="legend"><strong id="legendTitle">Prevalence (%)</strong><div id="legendRamp" class="legend-ramp"></div><div><span id="legendLow">Lower</span><span id="legendHigh">Higher</span></div><p>England average <b id="nationalValue">8.8%</b></p></div>
         <svg id="englandMap" class="england-map" viewBox="0 0 500 610" role="img" aria-label="Map of England by region"></svg>
@@ -62,9 +62,11 @@
       <button id="closeModal" class="close" aria-label="Close">×</button><p class="eyebrow teal">Methodology</p><h2 id="aboutTitle">About this analysis</h2>
       <p>The proposed pipeline combines annual QOF prevalence, practice geography and area deprivation. For each condition, a deprivation-adjusted residual estimates whether recorded prevalence is above or below the level expected from deprivation alone.</p>
       <p>Condition-pair scores are correlations between adjusted practice-level rates. They identify geographic clustering, not diagnoses recorded for the same patients.</p>
-      <p>This demonstration uses fabricated regional values so the design and interaction can be reviewed before the reproducible data pipeline is connected.</p>
+      <p id="methodStatus">The site uses a reproducible data pipeline so the published results can be refreshed without rebuilding the webpage.</p>
     </section>
   </div>
+  <script src="data/atlas-data.js"></script>
+  <script src="data/icb-boundaries.js"></script>
   <script src="regions.js"></script>
   <script src="app.js"></script>
 </body>
